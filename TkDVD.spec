@@ -8,7 +8,6 @@ Group:		X11/Applications
 Source0:	http://regis.damongeot.free.fr/tkdvd/dl/%{name}-%{version}.tar.gz
 # Source0-md5:	6e750649f9607f1cdba59674cf8cfb71
 URL:		http://regis.damongeot.free.fr/tkdvd/
-BuildRequires:	sed
 Requires:	tk >= 8.4
 Requires:	dvd+rw-tools
 BuildArch:	noarch
