@@ -1,13 +1,14 @@
 Summary:	Simple DVD mastering GUI
 Summary(pl):	Proste GUI do nagrywania DVD
 Name:		TkDVD
-Version:	3.8.4
+Version:	3.10.1
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://regis.damongeot.free.fr/tkdvd/dl/%{name}-%{version}.tar.gz
-# Source0-md5:	cc9d3e5d3cbeeab08315b57214bf0f28
+# Source0-md5:	0d280e9be906affba3be0672a844476c
 URL:		http://regis.damongeot.free.fr/tkdvd/
+Source1:	%{name}.desktop
 Requires:	dvd+rw-tools
 Requires:	tk >= 8.4
 BuildArch:	noarch
@@ -22,14 +23,19 @@ TkDVD jest graficzn± nak³adk± na growisofs, które jest cze¶ci±
 dvd+rw-tools. Pozwala na ³atwe wypalanie DVD+R/RW, -R/W oraz DVD+R DL.
 
 %prep
-%setup -q -n TkDVD
+%setup -q -n tkdvd
+%configure /usr
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d  $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/%{name}/src}
+install -d  $RPM_BUILD_ROOT{%{_bindir},%{_desktopdir},%{_pixmapsdir},%{_datadir}/%{name}/src}
 sed  's|${source_directory}|%{_datadir}/%name|' TkDVD.sh \
     > $RPM_BUILD_ROOT/%{_bindir}/TkDVD
+rm -rf src/CVS
 install src/* $RPM_BUILD_ROOT%{_datadir}/%{name}/src
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+install icons/tkdvd-48.png $RPM_BUILD_ROOT%{_pixmapsdir}/tkdvd.png
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -39,3 +45,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc ChangeLog FAQ README TODO doc/config_file
 %attr(755,root,root) %{_bindir}/%{name}
 %{_datadir}/%{name}
+%{_pixmapsdir}/*.png
+%{_desktopdir}/*.desktop
