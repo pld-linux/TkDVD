@@ -24,14 +24,16 @@ dvd+rw-tools. Pozwala na ³atwe wypalanie DVD+R/RW, -R/W oraz DVD+R DL.
 
 %prep
 %setup -q -n tkdvd
-%configure /usr
+%configure \
+	%{_prefix} \
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d  $RPM_BUILD_ROOT{%{_bindir},%{_desktopdir},%{_pixmapsdir},%{_datadir}/%{name}/src}
-sed  's|${source_directory}|%{_datadir}/%name|' TkDVD.sh \
-    > $RPM_BUILD_ROOT/%{_bindir}/TkDVD
+sed  's|${source_directory}|%{_datadir}/%{name}|' TkDVD.sh \
+    > $RPM_BUILD_ROOT%{_bindir}/TkDVD
 rm -rf src/CVS
 install src/* $RPM_BUILD_ROOT%{_datadir}/%{name}/src
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
