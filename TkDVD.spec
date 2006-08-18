@@ -19,7 +19,7 @@ TkDVD is a GUI for growisofs which is a part of dvd+rw-tools. It
 allows burning DVD+R/RW, -R/W and DVD+R DL easily.
 
 %description -l pl
-TkDVD jest graficzn± nak³adk± na growisofs, które jest cze¶ci±
+TkDVD jest graficzn± nak³adk± na growisofs, które jest czê¶ci±
 dvd+rw-tools. Pozwala na ³atwe wypalanie DVD+R/RW, -R/W oraz DVD+R DL.
 
 %prep
