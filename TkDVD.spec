@@ -1,5 +1,5 @@
 Summary:	Simple DVD mastering GUI
-Summary(pl.UTF-8):   Proste GUI do nagrywania DVD
+Summary(pl.UTF-8):	Proste GUI do nagrywania DVD
 Name:		TkDVD
 Version:	4.0.4
 Release:	1
