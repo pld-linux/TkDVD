@@ -1,5 +1,5 @@
 Summary:	Simple DVD mastering GUI
-Summary(pl):	Proste GUI do nagrywania DVD
+Summary(pl.UTF-8):   Proste GUI do nagrywania DVD
 Name:		TkDVD
 Version:	4.0.4
 Release:	1
@@ -18,9 +18,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 TkDVD is a GUI for growisofs which is a part of dvd+rw-tools. It
 allows burning DVD+R/RW, -R/W and DVD+R DL easily.
 
-%description -l pl
-TkDVD jest graficzn± nak³adk± na growisofs, które jest czê¶ci±
-dvd+rw-tools. Pozwala na ³atwe wypalanie DVD+R/RW, -R/W oraz DVD+R DL.
+%description -l pl.UTF-8
+TkDVD jest graficznÄ… nakÅ‚adkÄ… na growisofs, ktÃ³re jest czÄ™Å›ciÄ…
+dvd+rw-tools. Pozwala na Å‚atwe wypalanie DVD+R/RW, -R/W oraz DVD+R DL.
 
 %prep
 %setup -q -n tkdvd
