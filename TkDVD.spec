@@ -1,14 +1,15 @@
 Summary:	Simple DVD mastering GUI
 Summary(pl.UTF-8):	Proste GUI do nagrywania DVD
 Name:		TkDVD
-Version:	4.0.4
+Version:	4.0.5
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://regis.damongeot.free.fr/tkdvd/dl/tkdvd-%{version}.tar.gz
-# Source0-md5:	7bbc675a4be625e762aa8e07cf44738f
+# Source0-md5:	c252395c735f29128711634648b69ca0
 URL:		http://regis.damongeot.free.fr/tkdvd/
 Source1:	%{name}.desktop
+BuildRequires:	tcl
 Requires:	dvd+rw-tools
 Requires:	tk >= 8.4
 BuildArch:	noarch
